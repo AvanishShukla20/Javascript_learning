@@ -84,12 +84,113 @@ hence [1,2,3] != [1,2,3]
 console.log(typeof clone); 
 console.log(typeof arr); 
 
-// **********************************some other functions ->
+// **********************************Other functions ->
 
-let arr2 = [10, 20, 30, 40, 50];
-let secondarr= arr2.join() // join always return a string containing all elements of array with comma separated
-console.log(typeof secondarr)
-console.log(secondarr)
+let arr9 = [10, 20, 30, 40, 50];
+let secondarr= arr9.join() // join always return a string containing all elements of array with comma separated
+// console.log(typeof secondarr)
+// console.log(secondarr)
+
+// console.log(Array.isArray("Rishabh"))
+// console.log(Array.isArray(12, 23, 56, 67))
+// console.log(Array.isArray([98, 76, 34]))
 
 
 
+
+
+// array functions
+1.
+// Interview asked ->
+
+// from method -> Creates an array from an iterable object.
+
+//console.log(Array.from("Hitesh")) 
+
+//console.log(Array.from({name : "Himesh", roll_no : 25})) // this will not work 
+
+// array.from always asks an iterable or array-like object to convert it to array
+/*
+Because
+The object { name: "Himesh" } is neither:
+
+1. Array-like → It doesn’t have:
+
+A length property.
+
+Numeric keys like 0, 1, etc.
+
+✅ Example of array-like:
+
+javascript
+Copy
+Edit
+{0: "Himesh", length: 1}
+
+2. Nor Iterable → It doesn’t implement Symbol.iterator.
+ */
+
+
+// this will work
+let obj = { name: "Himesh", roll_no : 25 };
+//console.log(Array.from(Object.entries(obj)));
+
+2.
+// merging of arrays
+
+const arr1 = [3, 2, 5 ,6 , 9, 8]
+const arr3 = ["hello", "you", "people"]
+const arr4 = [23, 76 ,14, 54, 63]
+
+// concat method -> Combines two or more arrays. This method returns a new array without modifying any existing arrays.(pass by value)
+
+// let newarr = arr1.concat(arr3)
+// console.log(newarr)
+
+// best for merging-> spread operator
+const newmergedarray = [...arr1, ...arr3, ...arr4]
+//console.log(newmergedarray)
+
+// push operator-> Appends new elements to the end of an array, and returns the new length of the array i.e modifies the array
+
+arr1.push(arr3)
+console.log(arr1)
+
+// .flat() method -> Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+
+let ar1 = [12, 89, 97, [23, 54, [23, 90, 16, [0, 6, 5, 2]], [8, 7, 5]], ["dil", "meri", ["na", "sune"]], "dil", "ka"]
+let newar1 = ar1.flat(2)
+let newar2 = ar1.flat()
+let newar3 = ar1.flat(3)
+let newar4 = ar1.flat(Infinity)
+
+// console.log(newar1);
+// console.log(newar2);
+// console.log(newar3);
+// console.log(newar4);
+
+
+/*
+// search from chatgpt what is depth here ->
+
+[                           // Level 0
+  12,
+  89,
+  97,
+  [                           // Level 1
+    23,
+    54,
+    [23, 90, 16, [0, 6, 5, 2]],  // Level 2
+    [8, 7, 5]                    // Level 2
+  ],
+  [                           // Level 1
+    "dil",
+    "meri",
+    ["na", "sune"]              // Level 2
+  ],
+  "dil",
+  "ka"
+]
+
+*/
