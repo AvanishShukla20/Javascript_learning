@@ -88,5 +88,8 @@ console.log(ob6)
 
 const arr = Object.keys(ob6)
 const arr2 = Object.values(ob6)
+const arr3 = Object.entries(ob6)
+
+console.log(arr3)
 console.log(arr)
 console.log(arr2)
