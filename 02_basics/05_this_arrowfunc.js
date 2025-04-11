@@ -7,17 +7,19 @@
 
 // function, this, arrow function and others INTERVIEW
 
-function temp()
-{
-    let username = "avanish"
-    console.log(this)
-    // console.log(this.username) // gives undefined Sol THIS CANNOT BE USED IN functions IT CAN ONLY BE USED IN OBJECTS
-}
+// function temp()
+// {
+//     let username = "avanish"
+//     console.log(this)
+//     // console.log(this.username) // gives undefined Sol THIS CANNOT BE USED IN functions IT CAN ONLY BE USED IN OBJECTS
+// }
 
-temp()
+// temp()
 
 
-// **** in arrow function->
+// arrow function DECLARATIONS ->
+
+1.
 
 // FUNCTION CORRECTLY DEFINED BUT IT CANNOT BE CALLED. So this is not suitable ->
 
@@ -27,19 +29,36 @@ temp()
 // }
 
 // So store it in some variable and then call
-const l = () => {
-        let username = "aman"
-        console.log(username)
-    }
+// const l = () => {
+//         let username = "aman"
+//         console.log(username)
+//     }
 
-    l()
+//     l()
+
+2.
+
+// jab curly braces nhi lgaoge to WE NEVER NEED to USE return keyword ...React me bahut Jyada use hota hai
+
+const myarfunc = (num1, num2) => (num1 + num2) // :O
+console.log(myarfunc(8, 98))
+
+// above is equivalent to 
+const myarfunc1 = (num1, num2) =>
+{
+    return num1 + num2
+}
+
+console.log(myarfunc1(8, 98))
+
+
+
+
 
 4. // ********************FAMOUS INTERVIEW QUES ****************
 // Regular functions create their own this context based on the calling object.
 
 // Arrow functions DO NOT create their own this — they use the this of the outer (enclosing) scope it means
-
-
 
 
 // ************* regular function
@@ -60,31 +79,31 @@ const l = () => {
 
 // ************ arrow function ->
 
-const user1 = {
-    name: "Aman",
-        sayHi : () => {
-        console.log(`Hi, I am ${this.name}`); // undefined
-    }
-};
+// const user1 = {
+//     name: "Aman",
+//         sayHi : () => {
+//         console.log(`Hi, I am ${this.name}`); // undefined
+//     }
+// };
 
-console.log(user1.sayHi()) // Arrow function doesn't create its own this. It tries to use this.name, but this comes from the outer scope 
+// console.log(user1.sayHi()) // Arrow function doesn't create its own this. It tries to use this.name, but this comes from the outer scope 
 
 
 // DIFFERENCE IN BEHAVIOUR OF THIS
 
-const user = {
-    name: "Aman",
-    greet: function() {
-        const sayHi = () => {
-            console.log(`Hi, I am ${this.name}`);
-        };
+// const user = {
+//     name: "Aman",
+//     greet: function() {
+//         const sayHi = () => {
+//             console.log(`Hi, I am ${this.name}`);
+//         };
 
-        sayHi(); // ✅ Works!
-    }
-};
+//         sayHi(); // ✅ Works!
+//     }
+// };
 
-user.greet(); // 👉 "Hi, I am Aman" 
-// it works because -> sayHi is an arrow function, so it doesn't have its own this. It inherits this from greet(), which is called on user
+// user.greet(); // 👉 "Hi, I am Aman" 
+// // it works because -> sayHi is an arrow function, so it doesn't have its own this. It inherits this from greet(), which is called on user
  
 
 
