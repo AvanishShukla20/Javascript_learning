@@ -51,7 +51,11 @@ const myarfunc1 = (num1, num2) =>
 
 console.log(myarfunc1(8, 98))
 
+// also if we want to return an object 
 
+// const m1= (num1, num2) => {username: "Amit", price: 45} // wrong
+const m2 = (num1, num2) => ({username: "Amit", price: 45}) // correct
+console.log(m2(7, 8));
 
 
 
