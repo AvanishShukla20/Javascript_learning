@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:wheat">
+    <div class="parent">
+        <li class="days">Monday</li>
+        <li class="days">Tuesday</li>
+        <li class="days">Wednesday</li>
+        <li class="days">Thursday</li>
+    </div>
+</body>
+
+<script>
+
+const paren = document.querySelector('.parent')
+// console.log(paren);
+ 
+// console.log(paren.children) // parent ki children property ->  returns all the children of given tag in HTMLCollection type Not the parent
+
+
+
+// for loop works on HTMLCollection but ForEach doesn't works 
+
+// for (let i = 0; i < paren.children.length; i++) {
+//     const element = paren.children[i];
+//     console.log(element.innerHTML);
+// }
+
+
+// targetting the first and last element very much useful !!
+
+// console.log(paren.firstElementChild)
+// console.log(paren.lastElementChild)
+
+// get parent form child ->
+
+// const ch = document.querySelector('.days')
+// console.log(ch.parentElement)
+
+
+
+// childNodes Property -> Gives a NodesList
+
+
+
+</script>
+</html>
