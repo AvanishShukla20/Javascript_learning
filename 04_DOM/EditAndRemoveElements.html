@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Edit And Removal</title>
+</head>
+<body style="background-color: #212121; color: bisque;">
+    
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+</body>
+<script>
+    // This is traditional method But This is expensive Because using innerHTML provokes Tarversal every time the function is called
+    // function addNewLang(lang)
+    // {
+    //      // createElement('') is used to create element
+    //     const l = document.createElement('li');
+    //     // add value to element
+    //     l.innerHTML = `${lang}`;
+    //     // get the parent
+    //     const p = document.querySelector('.language');
+    //     p.appendChild(l);
+    // }
+    // addNewlang('python');
+
+
+
+    // method 2 -> Optimised
+
+    function addNewOptimisedLang(lang){
+
+        const l = document.createElement('li');
+        // optimisation-> we create a new textNode and append it with l
+        l.appendChild(document.createTextNode(lang));
+        
+        const p = document.querySelector('.language');
+        p.appendChild(l);
+    }
+
+    addNewOptimisedLang('c++');
+
+    //edit by help of replaceWith() function 
+
+    const sl = document.querySelector("li:nth-child(2)"); // nth child property use
+    const p = sl.appendChild(document.createTextNode("Davara Song !!"));
+    sl.replaceWith(p);
+
+    // 2nd_method of edit-> 
+    const slt = document.querySelector("li:nth-child(2)"); // nth child property use
+    slt.innerHTML = "I want Everything here !! "
+
+    // delete method -> .remove() method
+
+    
+</script>
+</html>
