@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Async Codes</title>
+</head>
+<body>
+    <h1>
+       Learning Async Code Example
+    </h1>
+    <button id="click-me">
+        Do
+       </button>
+       <button id="click-me2">
+        Stop
+       </button>
+</body>
+
+<script>
+    // setInterval and setTimeout ...
+    const p = document.querySelector('h1')
+    let timeout_id;
+
+    const changeT = function(){
+        p.innerHTML = "Chal Gya "
+        console.log("Done !!")
+    }
+
+    const d = function(){
+        timeout_id = setTimeout(changeT, 3000)
+        console.log("Tere Naino me !!")
+    }
+
+    document.querySelector('#click-me').addEventListener('click', d);
+    document.querySelector('#click-me2').addEventListener('click', () => {
+        clearTimeout(timeout_id) // this needs the id of setTimeout not any function or reference name
+        p.innerHTML = "Ruk gaya bhai bass kro !!"
+
+    })
+    
+</script>
+</html>
