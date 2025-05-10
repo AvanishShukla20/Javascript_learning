@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Requests</title>
+</head>
+<body>
+    
+    Value	State	Description
+0	UNSENT	The XMLHttpRequest object has been created, but .open() has not been called yet.
+1	OPENED	.open() has been called. You can now set headers and call .send().
+2	HEADERS_RECEIVED	.send() has been called, and the response headers have been received.
+3	LOADING	The response body is being received (data is available via .responseText).
+4	DONE	The request is complete, and the entire response is available.
+
+
+
+</body>
+
+<script>
+    const requestUrl = "https://randomuser.me/api/";
+    // XMLHttpRequest needs to be initailsed as an object
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', requestUrl);
+
+    // readystates change which can be detected by onreadystatechange property
+
+    xhr.onreadystatechange = function()
+    {
+        console.log(xhr.readyState);
+
+        if(xhr.readyState == 4)
+    {
+        const data = this.responseText;
+        console.log(data);
+    }
+    }
+
+    xhr.send(); // after send() is called then only open is executed
+
+
+</script>
+</html>
